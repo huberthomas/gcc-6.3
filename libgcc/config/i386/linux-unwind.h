@@ -138,7 +138,7 @@ x86_fallback_frame_state (struct _Unwind_Context *context,
 	siginfo_t *pinfo;
 	void *puc;
 	siginfo_t info;
-	struct ucontext uc;
+	ucontext_t uc;
       } *rt_ = context->cfa;
       /* The void * cast is necessary to avoid an aliasing warning.
          The aliasing warning is correct, but should not be a problem

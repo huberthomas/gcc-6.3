@@ -1,3 +1,5 @@
+# GCC-6.3
+
 This directory contains the GNU Compiler Collection (GCC).
 
 The GNU Compiler Collection is free software.  See the files whose
@@ -20,3 +22,43 @@ Copyright years on GCC source files may be listed using range
 notation, e.g., 1987-2012, indicating that every year in the range,
 inclusive, is a copyrightable year that could otherwise be listed
 individually.
+
+## Information
+
+The source is based on the code of [easyname](http://mirror.easyname.at/gnu/gcc/gcc-6.3.0/) 
+and has been modified to compile successfully on Ubuntu 18.04 LTS.
+
+## Installation
+
+    git clone git@github.com:huberthomas/gcc-6.3.git
+    cd gcc-6.3
+    ./contrib/download_prerequesites
+    mkdir build && cd build
+
+Configure it and set the installation directory by modifying the prefix parameter
+
+    ../configure -v --prefix=/usr/local/gcc-6.3 --disable-multilib
+    make -j$(nproc)
+    sudo make install
+
+## Hints
+
+Afterwards you can use update-alternatives to switch between gcc versions:
+
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/local/gcc-6.3/bin/gcc 6
+
+for other versions
+
+    ls -l /usr/bin/gcc*
+
+you can do the same, e.g.
+
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 7
+
+Switch between the gcc versions by 
+
+    sudo update-alternatives --config gcc
+
+Test it by
+
+    gcc --version

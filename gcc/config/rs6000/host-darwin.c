@@ -33,7 +33,7 @@ static void darwin_rs6000_extra_signals (void);
 #ifndef HAVE_DECL_SIGALTSTACK
 /* This doesn't have a prototype in signal.h in 10.2.x and earlier,
    fixed in later releases.  */
-extern int sigaltstack(const stack_t*, stack_t *);
+extern int sigaltstack(const struct sigaltstack *, struct sigaltstack *);
 #endif
 
 /* The fields of the mcontext_t type have acquired underscores in later

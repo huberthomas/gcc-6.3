@@ -80,7 +80,7 @@ pa32_fallback_frame_state (struct _Unwind_Context *context,
   struct sigcontext *sc;
   struct rt_sigframe {
     siginfo_t info;
-    ucontext_t uc;
+    struct ucontext uc;
   } *frame;
 
   /* rt_sigreturn trampoline:

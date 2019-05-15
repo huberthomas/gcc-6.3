@@ -38,7 +38,7 @@ struct nios2_mcontext {
 
 struct nios2_ucontext {
   unsigned long uc_flags;
-  ucontext_t *uc_link;
+  struct ucontext *uc_link;
   stack_t uc_stack;
   struct nios2_mcontext uc_mcontext;
   sigset_t uc_sigmask;	/* mask last for extensibility */

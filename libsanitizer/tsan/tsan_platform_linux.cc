@@ -44,7 +44,7 @@
 #include <dlfcn.h>
 #if SANITIZER_LINUX
 #define __need_res_state
-#include "bits/types/res_state.h"
+#include <resolv.h>
 #endif
 
 #ifdef sa_handler

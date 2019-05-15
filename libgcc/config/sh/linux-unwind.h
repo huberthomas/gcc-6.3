@@ -83,7 +83,7 @@ shmedia_fallback_frame_state (struct _Unwind_Context *context,
 	siginfo_t *pinfo;
 	void *puc;
 	siginfo_t info;
-	ucontext_t uc;
+	struct ucontext uc;
       } *rt_ = context->cfa;
       /* The void * cast is necessary to avoid an aliasing warning.
          The aliasing warning is correct, but should not be a problem
@@ -180,7 +180,7 @@ sh_fallback_frame_state (struct _Unwind_Context *context,
     {
       struct rt_sigframe {
 	siginfo_t info;
-ucontext_t uc;
+	struct ucontext uc;
       } *rt_ = context->cfa;
       /* The void * cast is necessary to avoid an aliasing warning.
          The aliasing warning is correct, but should not be a problem

@@ -26,7 +26,7 @@ individually.
 ## Information
 
 The source is based on the code of [easyname](http://mirror.easyname.at/gnu/gcc/gcc-6.3.0/) 
-and has been modified to compile successfully on Ubuntu 18.04 LTS.
+and has been modified to compile successfully. Branches for Ubuntu 16.04 LTS and 18.04 LTS are available.
 
 ## Installation
 
